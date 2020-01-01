@@ -3,6 +3,8 @@ package com.springbootmybatis.controller;
 import com.springbootmybatis.empty.UserEmpty;
 import com.springbootmybatis.service.UserService;
 import io.swagger.annotations.ApiOperation;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -24,6 +26,13 @@ import java.util.Map;
 @Controller
 @RequestMapping("/user")
 public class UserController{
+
+    // 主日志
+    private final static Logger logger = LoggerFactory.getLogger(UserController.class);
+
+    // 自定义日志(oneInfo)
+    private final static Logger oneInfoLogger = LoggerFactory.getLogger("oneInfo");
+
     @Autowired
     private UserService userService;
 
@@ -48,6 +57,13 @@ public class UserController{
     @ResponseBody
     public Object getByUserName(HttpServletRequest request, HttpServletResponse response,@PathVariable("userName") String userName){
        // String userName = request.getParameter("userName");
+        logger.debug("记录debug日志");
+        logger.info("访问了index方法(INFO日志 )");
+        logger.error("记录了error错误日志");
+
+        oneInfoLogger.debug("oneInfoLogger记录debug日志");
+        oneInfoLogger.info("oneInfoLogger访问了index方法(INFO日志 )");
+        oneInfoLogger.error("oneInfoLogger记录了error错误日志");
         return userService.getByUserName(userName);
     }
 }
