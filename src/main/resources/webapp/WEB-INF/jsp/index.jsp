@@ -1,0 +1,19 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<html>
+<head>
+    <title>Title</title>
+</head>
+<body>
+Map:
+id:${map.id}
+name:${map.name}
+pwd:${map.password}
+time:${map.createTime}
+---------------
+user:
+id:${user.id}
+name:${user.userName}
+pwd:${user.userPassword}
+time:${user.createTime}
+</body>
+</html>

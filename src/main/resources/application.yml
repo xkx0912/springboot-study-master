@@ -1,0 +1,32 @@
+##端口号
+server:
+  port: 8888
+  servlet:
+    context-path: /myApp
+  tomcat:
+    uri-encoding: utf-8
+    max-connections: 1000
+# 热部署
+spring:
+# jsp 页面跳转路径缺省配置
+  mvc:
+    view:
+      prefix: /WEB-INF/jsp/
+      suffix: .jsp
+  devtools:
+    restart:
+      enabled: true
+##数据库url
+  datasource:
+    url: jdbc:mysql://localhost:3306/springBootMybatisPlus?characterEncoding=utf8&useSSL=false&serverTimezone=Asia/Shanghai
+    username: root
+    password: 0912
+    driver-class-name: com.mysql.jdbc.Driver
+
+mybatis-plus:
+  mapper-locations: classpath*:mapper/*Mappering.xml
+  type-aliases-package: com.springbootmybatis.empty
+#logging:
+#  level: debug
+
+
