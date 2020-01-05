@@ -35,8 +35,16 @@ public class TeacherController {
     @Autowired
     private TeacherService teacherService;
 
+    @GetMapping(value = "/db2/auto/{id}")
+    @ApiOperation(value="根据用户ID查询用户[DB2数据源](mybatisplusz封装方法查询)", notes="根据用户ID查询用户[DB2数据源]")
+    @ResponseBody
+    public TeacherEmpty getUserAutoById2(HttpServletRequest request, HttpServletResponse response,
+                                     @PathVariable("id") long id){
+        return teacherService.getUserAutoByIdDB2(id);
+    }
+
     @GetMapping(value = "/db2/{id}")
-    @ApiOperation(value="根据用户ID查询用户[DB2数据源]", notes="根据用户ID查询用户[DB2ddddd数据源]")
+    @ApiOperation(value="根据用户ID查询用户[DB2数据源](mapper.xml中查询)", notes="根据用户ID查询用户[DB2数据源]")
     @ResponseBody
     public TeacherEmpty getUserById2(HttpServletRequest request, HttpServletResponse response,
                                      @PathVariable("id") long id){

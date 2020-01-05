@@ -11,4 +11,6 @@ import org.apache.ibatis.annotations.Param;
 @Mapper
 public interface UserMapper extends BaseMapper<UserEmpty> {
     UserEmpty selectByName(@Param("userName") String userName);
+
+    UserEmpty getUserById(@Param("id") long id);
 }

@@ -12,4 +12,6 @@ import org.apache.ibatis.annotations.Param;
 @Mapper
 public interface TeacherMapper extends BaseMapper<TeacherEmpty> {
     TeacherEmpty selectByName(@Param("userName") String userName);
+
+    TeacherEmpty gerTeacherById(@Param("id") long id);
 }

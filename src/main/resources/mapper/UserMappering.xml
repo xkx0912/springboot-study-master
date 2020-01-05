@@ -15,4 +15,13 @@
         AND
         u.user_name = #{userName}
     </select>
+
+    <select id="getUserById" resultType="com.springbootmybatis.empty.UserEmpty">
+        SELECT
+        <include refid="colID"/>
+        FROM user AS u
+        WHERE 1=1
+        AND
+        u.id = #{id}
+    </select>
 </mapper>

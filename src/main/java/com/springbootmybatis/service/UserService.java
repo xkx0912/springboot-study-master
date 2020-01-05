@@ -21,4 +21,22 @@ public class UserService extends ServiceImpl<UserMapper,UserEmpty> {
     public Object getByUserName(String userName) {
         return userMapper.selectByName(userName);
     }
+
+    /**
+     * 根据数据源不同  查询不同的数据库数据(DB1数据源)(plus中封装方法查询)
+     * @param id
+     * @return
+     */
+    public UserEmpty getUserAutoByIdDB1(long id) {
+        return userMapper.selectById(id);
+    }
+
+    /**
+     * 根据数据源不同  查询不同的数据库数据(DB1数据源)(mapper.xml文件中查询)
+     * @param id
+     * @return
+     */
+    public UserEmpty getUserByIdDB1(long id) {
+        return userMapper.getUserById(id);
+    }
 }

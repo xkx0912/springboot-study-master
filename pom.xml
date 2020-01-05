@@ -43,19 +43,24 @@
 			<version>2.1.9</version>
 		</dependency>
 
+		<!-- ali druid -->
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>druid-spring-boot-starter</artifactId>
+			<version>1.1.9</version>
+		</dependency>
+
 		<!-- swagger2   start -->
 		<dependency>
 			<groupId>io.springfox</groupId>
 			<artifactId>springfox-swagger2</artifactId>
 			<version>2.9.2</version>
 		</dependency>
-
 		<dependency>
 			<groupId>io.springfox</groupId>
 			<artifactId>springfox-swagger-ui</artifactId>
 			<version>2.9.2</version>
 		</dependency>
-		<!-- swagger2   end -->
 
 		<!-- jsp 视图支持-->
 		<dependency>
@@ -90,17 +95,12 @@
 			<artifactId>slf4j-api</artifactId>
 			<version>1.7.5</version>
 		</dependency>
-		<!--<dependency>
-			<groupId>ch.qos.logback</groupId>
-			<artifactId>logback-core</artifactId>
-			<version>1.0.11</version>
-		</dependency>
+
+		<!--springBoot的aop-->
 		<dependency>
-			<groupId>ch.qos.logback</groupId>
-			<artifactId>logback-classic</artifactId>
-			<version>1.0.11</version>
-		</dependency>-->
-		<!--日志 end-->
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-aop</artifactId>
+		</dependency>
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
