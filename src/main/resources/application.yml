@@ -18,7 +18,7 @@ spring:
       enabled: true
 ##数据库url
   datasource:
-    url: jdbc:mysql://localhost:3306/springBootMybatisPlus?characterEncoding=utf8&useSSL=false&serverTimezone=Asia/Shanghai
+    url: jdbc:mysql://localhost:3306/springbootmybatisplus2?characterEncoding=utf8&useSSL=false&serverTimezone=Asia/Shanghai
     username: root
     password: 0912
     driver-class-name: com.mysql.jdbc.Driver

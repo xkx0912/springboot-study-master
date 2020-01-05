@@ -1,5 +1,6 @@
 package com.springbootmybatis.empty;
 
+import com.baomidou.mybatisplus.annotations.TableField;
 import com.baomidou.mybatisplus.annotations.TableId;
 import com.baomidou.mybatisplus.annotations.TableName;
 import com.baomidou.mybatisplus.enums.IdType;
@@ -25,12 +26,15 @@ public class TeacherEmpty implements Serializable{
     private long id;
 
     @ApiModelProperty(value = "用户名")
+    @TableField(value = "user_name")
     private String userName;
 
     @ApiModelProperty(value = "用户密码")
+    @TableField(value = "user_password")
     private String userPassword;
 
     @ApiModelProperty(value = "创建时间")
+    @TableField(value = "create_time")
     private Date createTime;
 
 }
