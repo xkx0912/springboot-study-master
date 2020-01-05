@@ -1,6 +1,8 @@
 package com.springbootmybatis.service;
 
 import com.baomidou.mybatisplus.service.impl.ServiceImpl;
+import com.springbootmybatis.annotation.DataSource;
+import com.springbootmybatis.common.enums.DataSourceEnum;
 import com.springbootmybatis.empty.UserEmpty;
 import com.springbootmybatis.mapperDao.UserMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -37,6 +39,28 @@ public class UserService extends ServiceImpl<UserMapper,UserEmpty> {
      * @return
      */
     public UserEmpty getUserByIdDB1(long id) {
+        return userMapper.getUserById(id);
+    }
+
+
+
+    /**
+     * 根据数据源不同  查询不同的数据库数据(DB2数据源)(plus中封装方法查询)
+     * @param id
+     * @return
+     */
+    @DataSource(DataSourceEnum.DB2)
+    public UserEmpty getUserAutoByIdDB2(long id) {
+        return userMapper.selectById(id);
+    }
+
+    /**
+     * 根据数据源不同  查询不同的数据库数据(DB2数据源)(mapper.xml文件中查询)
+     * @param id
+     * @return
+     */
+    @DataSource(DataSourceEnum.DB2)
+    public UserEmpty getUserByIdDB2(long id) {
         return userMapper.getUserById(id);
     }
 }

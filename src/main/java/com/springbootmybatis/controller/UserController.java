@@ -63,17 +63,31 @@ public class UserController{
         return userService.getByUserName(userName);
     }
 
-    @GetMapping(value = "/db2/auto/{id}")
+    @GetMapping(value = "/db1/auto/{id}")
     @ApiOperation(value="根据用户ID查询用户[DB1数据源](mybatisplusz封装方法查询)", notes="根据用户ID查询用户[DB1数据源]")
-    public UserEmpty getUserAutoById2(HttpServletRequest request, HttpServletResponse response,
+    public UserEmpty getUserAutoById1(HttpServletRequest request, HttpServletResponse response,
                                          @PathVariable("id") long id){
         return userService.getUserAutoByIdDB1(id);
     }
 
-    @GetMapping(value = "/db2/{id}")
+    @GetMapping(value = "/db1/{id}")
     @ApiOperation(value="根据用户ID查询用户[DB1数据源](mapper.xml中查询)", notes="根据用户ID查询用户[DB1数据源]")
-    public UserEmpty getUserById2(HttpServletRequest request, HttpServletResponse response,
+    public UserEmpty getUserById1(HttpServletRequest request, HttpServletResponse response,
                                      @PathVariable("id") long id){
         return userService.getUserByIdDB1(id);
+    }
+
+    @GetMapping(value = "/db2/auto/{id}")
+    @ApiOperation(value="根据用户ID查询用户[DB2数据源](mybatisplus封装方法查询)", notes="根据用户ID查询用户[DB2数据源]")
+    public UserEmpty getUserAutoById2(HttpServletRequest request, HttpServletResponse response,
+                                      @PathVariable("id") long id){
+        return userService.getUserAutoByIdDB2(id);
+    }
+
+    @GetMapping(value = "/db2/{id}")
+    @ApiOperation(value="根据用户ID查询用户[DB2数据源](mapper.xml中查询)", notes="根据用户ID查询用户[DB2数据源]")
+    public UserEmpty getUserById2(HttpServletRequest request, HttpServletResponse response,
+                                  @PathVariable("id") long id){
+        return userService.getUserByIdDB2(id);
     }
 }
