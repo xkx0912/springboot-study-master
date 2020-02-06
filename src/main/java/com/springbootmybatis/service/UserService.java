@@ -74,7 +74,7 @@ public class UserService extends ServiceImpl<UserMapper,UserEmpty> {
     //@Transactional(rollbackFor=Exception.class)
     public UserEmpty saveUserDB2(UserEmpty userEmpty){
         userMapper.insert(userEmpty);
-        int i = 9 / 0;
+        //int i = 9 / 0;
         return userEmpty;
     }
 }

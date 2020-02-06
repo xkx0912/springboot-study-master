@@ -1,6 +1,7 @@
 package com.springbootmybatis.controller;
 
 import com.springbootmybatis.empty.UserEmpty;
+import com.springbootmybatis.empty.option.UserOption;
 import com.springbootmybatis.service.UserService;
 import io.swagger.annotations.ApiOperation;
 import org.slf4j.Logger;
@@ -98,6 +99,16 @@ public class UserController{
         UserEmpty userEmpty = new UserEmpty();
         userEmpty.setUserName(userName);
         userEmpty.setUserPassword(userPassword);
+        userEmpty.setCreateTime(LocalDateTime.now());
+        return userService.saveUserDB2(userEmpty);
+    }
+
+    @PostMapping(value = "/db2/save/user-option")
+    @ApiOperation(value="添加用户[DB2数据源]方式二", notes="添加用户[DB2数据源]方式二")
+    public UserEmpty saveUserDB2(@RequestBody UserOption userOption){
+        UserEmpty userEmpty = new UserEmpty();
+        userEmpty.setUserName(userOption.getUserName());
+        userEmpty.setUserPassword(userOption.getUserPassword());
         userEmpty.setCreateTime(LocalDateTime.now());
         return userService.saveUserDB2(userEmpty);
     }
