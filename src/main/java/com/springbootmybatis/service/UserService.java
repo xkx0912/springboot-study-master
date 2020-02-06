@@ -7,6 +7,7 @@ import com.springbootmybatis.empty.UserEmpty;
 import com.springbootmybatis.mapperDao.UserMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 /**
  * Created by xkx on 2019/3/9.
@@ -62,5 +63,18 @@ public class UserService extends ServiceImpl<UserMapper,UserEmpty> {
     @DataSource(DataSourceEnum.DB2)
     public UserEmpty getUserByIdDB2(long id) {
         return userMapper.getUserById(id);
+    }
+
+    /**
+     * (DB2数据源)添加用户
+     * @param id
+     * @return
+     */
+    @DataSource(DataSourceEnum.DB2)
+    //@Transactional(rollbackFor=Exception.class)
+    public UserEmpty saveUserDB2(UserEmpty userEmpty){
+        userMapper.insert(userEmpty);
+        int i = 9 / 0;
+        return userEmpty;
     }
 }

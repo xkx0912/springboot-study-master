@@ -14,6 +14,7 @@ import springfox.documentation.annotations.ApiIgnore;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -89,5 +90,15 @@ public class UserController{
     public UserEmpty getUserById2(HttpServletRequest request, HttpServletResponse response,
                                   @PathVariable("id") long id){
         return userService.getUserByIdDB2(id);
+    }
+
+    @PostMapping(value = "/db2/save")
+    @ApiOperation(value="添加用户[DB2数据源]", notes="添加用户[DB2数据源]")
+    public UserEmpty saveUserDB2(@RequestParam("userName") String userName, @RequestParam("userPassword") String userPassword){
+        UserEmpty userEmpty = new UserEmpty();
+        userEmpty.setUserName(userName);
+        userEmpty.setUserPassword(userPassword);
+        userEmpty.setCreateTime(LocalDateTime.now());
+        return userService.saveUserDB2(userEmpty);
     }
 }

@@ -9,6 +9,7 @@ import lombok.Data;
 import lombok.ToString;
 
 import java.io.Serializable;
+import java.time.LocalDateTime;
 import java.util.Date;
 
 /**
@@ -23,7 +24,7 @@ public class UserEmpty implements Serializable{
 
     @ApiModelProperty(value = "ID")
     @TableId(value = "id", type= IdType.AUTO)
-    private Integer id;
+    private long id;
 
     @ApiModelProperty(value = "用户名")
     @TableField(value = "user_name")
@@ -35,6 +36,6 @@ public class UserEmpty implements Serializable{
 
     @ApiModelProperty(value = "创建时间")
     @TableField(value = "create_time")
-    private Date createTime;
+    private LocalDateTime createTime;
 
 }

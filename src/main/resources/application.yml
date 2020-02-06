@@ -22,6 +22,8 @@ spring:
     restart:
       enabled: true
 
+  transaction:
+    rollback-on-commit-failure: true
 ##数据库url
   datasource:
     druid:
