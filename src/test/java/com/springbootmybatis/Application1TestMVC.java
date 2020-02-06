@@ -1,7 +1,6 @@
 package com.springbootmybatis;
 
 import com.alibaba.fastjson.JSON;
-import com.springbootmybatis.empty.UserEmpty;
 import com.springbootmybatis.empty.option.UserOption;
 import org.junit.Before;
 import org.junit.Test;
