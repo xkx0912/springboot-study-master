@@ -2,6 +2,7 @@ package com.springbootmybatis.service;
 
 import com.baomidou.mybatisplus.service.impl.ServiceImpl;
 import com.springbootmybatis.annotation.DataSource;
+import com.springbootmybatis.annotation.Log;
 import com.springbootmybatis.common.enums.DataSourceEnum;
 import com.springbootmybatis.empty.UserEmpty;
 import com.springbootmybatis.mapperDao.UserMapper;
@@ -61,6 +62,7 @@ public class UserService extends ServiceImpl<UserMapper,UserEmpty> {
      * @return
      */
     @DataSource(DataSourceEnum.DB2)
+    @Log("记录查询日志")
     public UserEmpty getUserByIdDB2(long id) {
         return userMapper.getUserById(id);
     }

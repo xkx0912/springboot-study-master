@@ -3,10 +3,8 @@ package com.springbootmybatis.aop;
 import com.springbootmybatis.annotation.DataSource;
 import com.springbootmybatis.multiple.DataSourceContextHolder;
 import lombok.extern.slf4j.Slf4j;
-import org.aspectj.lang.annotation.After;
-import org.aspectj.lang.annotation.Aspect;
-import org.aspectj.lang.annotation.Before;
-import org.aspectj.lang.annotation.Pointcut;
+import org.aspectj.lang.annotation.*;
+import org.slf4j.Logger;
 import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
@@ -18,7 +16,6 @@ public class DataSourceAspect {
 
     @Pointcut("@within(com.springbootmybatis.annotation.DataSource) || @annotation(com.springbootmybatis.annotation.DataSource)")
     public void pointCut(){
-
     }
 
     @Before("pointCut() && @annotation(dataSource)")
@@ -31,4 +28,5 @@ public class DataSourceAspect {
     public void doAfter(){
         DataSourceContextHolder.clear();
     }
+
 }
